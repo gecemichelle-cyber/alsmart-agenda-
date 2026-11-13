@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agenda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Smart Agenda</h1>
+        <p>Bienvenue dans votre agenda intelligent.</p>
+    </header>
+
+    <main>
+
+        <section class="calendrier">
+            <h2>Mon calendrier</h2>
+
+            <div class="navigation">
+                <button type="button" id="precedent">❮</button>
+                <h3 id="moisAnnee"></h3>
+                <button type="button" id="suivant">❯</button>
+            </div>
+
+            <div class="jours" id="jours"></div>
+        </section>
+
+        <section class="formulaire">
+            <h2>Ajouter un événement</h2>
+
+            <form id="formEvenement">
+
+                <label for="titre">Nom de l'événement</label>
+                <input type="text" id="titre"
+                       placeholder="Exemple : Réunion"
+                       required>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" required>
+
+                <label for="heure">Heure</label>
+                <input type="time" id="heure" required>
+
+                <label for="rappel">Me rappeler</label>
+                <select id="rappel">
+                    <option value="0">À l'heure de l'événement</option>
+                    <option value="5">5 minutes avant</option>
+                    <option value="10">10 minutes avant</option>
+                    <option value="15">15 minutes avant</option>
+                    <option value="30">30 minutes avant</option>
+                    <option value="60">1 heure avant</option>
+                </select>
+
+                <button type="submit" id="soumettre">
+                    Soumettre l'événement
+                </button>
+
+            </form>
+        </section>
+
+        <section class="evenements">
+            <h2>Mes événements</h2>
+            <div id="listeEvenements"></div>
+        </section>
+
+        <section class="son">
+            <button type="button" id="activerSon">
+                Activer le son des rappels
+            </button>
+            <p id="etatSon">Son non activé.</p>
+        </section>
+
+    </main>
+
+    <div id="alerteSonnerie" class="alerte-sonnerie" hidden>
+        <h2>Rappel !</h2>
+        <p id="messageSonnerie"></p>
+
+        <button type="button" id="arreter">
+            Arrêter la sonnerie
+        </button>
+
+        <button type="button" id="repeter">
+            Répéter dans 5 minutes
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

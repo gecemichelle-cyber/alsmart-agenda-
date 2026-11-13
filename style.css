@@ -1,0 +1,199 @@
+*{box-sizing: border-box;}
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #f3f1ff;
+    color: #29243d;
+    background-color: #5bb6e4;
+    border-color: #d94c65;
+    
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #7358dc;
+}
+
+main {
+    max-width: 750px;
+    margin: auto;
+}
+
+.calendrier,
+.formulaire,
+.evenements,
+.son {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navigation button {
+    width: 45px;
+}
+
+.navigation h3 {
+    text-align: center;
+}
+
+.jours {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.jour {
+    background: #f3f1ff;
+    padding: 15px 5px;
+    text-align: center;
+    border-radius: 7px;
+    min-height: 55px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.jour:hover {
+    background: #dbeafe;
+}
+
+.jour.nom-jour {
+    background: transparent;
+    font-weight: bold;
+    color: #555;
+    min-height: auto;
+    padding: 5px;
+    cursor: default;
+}
+
+.jour.aujourd-hui {
+    border: 2px solid #7358dc;
+    font-weight: bold;
+}
+
+.jour.selectionne {
+    background: #7358dc;
+    color: white;
+}
+
+.jour.avec-evenement::after {
+    content: "•";
+    display: block;
+    color: #e45b8b;
+    font-size: 20px;
+    line-height: 12px;
+}
+
+.jour.selectionne.avec-evenement::after {
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    background: #7358dc;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #5940bd;
+}
+
+.evenement {
+    border: 1px solid #ddd;
+    border-left: 5px solid #7358dc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.evenement h3 {
+    margin-top: 0;
+}
+
+.evenement button {
+    background: #d94c65;
+    margin-top: 8px;
+}
+
+.son {
+    text-align: center;
+}
+
+.alerte-sonnerie {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    width: 85%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 0 0 100vmax #0008;
+    z-index: 10;
+}
+
+.alerte-sonnerie button {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    .calendrier,
+    .formulaire,
+    .evenements,
+    .son {
+        padding: 15px;
+    }
+
+    .jours {
+        gap: 4px;
+    }
+
+    .jour {
+        padding: 12px 2px;
+        min-height: 45px;
+    }
+}
